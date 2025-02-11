@@ -6,12 +6,13 @@ def findSmallest(arr):
 			smallest = arr[i]
 			smallest_index = i
 	return smallest_index
-Smallest_index = findSmallest([9456456,45658,45613215,1561232,5156155])
+Smallest_index = findSmallest([9456456,45658,45613215,1561232,5156155,123,453213])
 print(Smallest_index)
 def selectionSort(arr):
 	newArr = []
-	for i in range (len(arr)):
-		smallest = findSmallest(arr)
-		newArr.append(arr.pop(smallest))
-	return newArr
-print(selectionSort([9456456,45658,45613215,1561232,5156155]))
+	arr_copy = list(arr)
+	for i in range (len(arr_copy)):
+		smallest = findSmallest(arr_copy)
+		newArr.append(arr_copy.pop(smallest))
+	return newArr, arr_copy, arr
+print(selectionSort([9456456,45658,45613215,1561232,5156155,123,453213]))
